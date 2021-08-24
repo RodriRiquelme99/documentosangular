@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.87.0">
+    <title>Blog Template · Bootstrap v5.1</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/blog/">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+
+    <app-header></app-header>
+
+    <main class="container" id="containerHeader">
+
+        <div class="primerdiv p-4 p-md-5 mb-4 text-white rounded bg-dark">
+            <div class="segundodiv col-md-6 px-0 align-self-center">
+                <h1 class="display-4 fst-italic">Entrenamiento Angular</h1>
+                <p class="lead my-3">En esta sección encontraras toda la documentación
+                    que necesitaras durante tu entrenamiento de Angular.</p>
+            </div>
+            <div class="tercerdiv">
+                <a href="#"><img class="logoAngular" src="../../../../assets/Angular_full_color_logo.svg.png"
+                        alt="Logo Angular" id="articulo1"></a>
+            </div>
+        </div>
+
+        <!--    
+        ================================ 
+        ======  COMIENZO DE BLOG  ====== 
+        ================================
+        -->
+
+
+
+
+        <div class="row g-5">
+            <div class="col-md-8">
+
+                <article class="blog-post" *ngFor="let dato of articulos; let i = index">
+                    <h3 class="titulo pb-4 mb-4 fst-italic border-bottom" id="articulo{{i}}">
+                        {{ dato.titulo }}
+                    </h3>
+                    <a href="{{dato.subarticulos.url}}" target="_blank">
+                        <h3 class="blog-post-title">
+                            {{ dato.subarticulos.subtitulo }}
+                        </h3>
+                    </a>
+                    <p>
+                        {{ dato.subarticulos.informacion }}
+                    </p>
+                    <a href="{{dato.subarticulos2?.url}}" target="_blank" >
+                        <h3 class="blog-post-title">
+                            {{ dato.subarticulos2?.subtitulo }}
+                        </h3>
+                    </a>
+                    <p>
+                        {{ dato.subarticulos2?.informacion }}
+                    </p>
+                    <a href="{{dato.subarticulos3?.url}}" target="_blank">
+                        <h3 class="blog-post-title">
+                            {{ dato.subarticulos3?.subtitulo }}
+                        </h3>
+                    </a>
+                    <p >
+                        {{ dato.subarticulos3?.informacion }}
+                    </p>
+                    <hr>
+                </article>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="position-sticky" style="top: 8rem;">
+
+                    <div class="p-4">
+
+                        <h4 class="fst-italic">Indice</h4>
+                        <ol class="sidebar list-unstyled mb-0 ">
+                            <li  *ngFor="let dato of articulos; let i = index"><a class="p-0 text-muted" href="/recursos/#articulo{{i}}">
+                                {{ dato.titulo }}</a></li>
+                        </ol>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <app-footer></app-footer>
+
+</body>
+
+</html>
